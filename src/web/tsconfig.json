@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./dist",
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "es6"],
+    "jsx": "react",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "paths": {
+      "@jest/types/*": ["node_modules/@jest/types/*"],
+      "@jest/reporters/*": ["node_modules/@jest/reporters/*"]
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "src/web/node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "src/web/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/web/node_modules"
+  ]
+}

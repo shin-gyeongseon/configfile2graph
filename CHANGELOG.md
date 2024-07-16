@@ -4,6 +4,9 @@ All notable changes to the "config2graph" extension will be documented in this f
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [0.0.1]
 
-- Initial release
+### Added 
+- yo code 프로젝트 초기화 
+- 기본 리액트 프로젝트 추가 
+- d3 라이브러리 샘플 적용

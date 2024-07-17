@@ -1,4 +1,6 @@
 import * as vscode from 'vscode';
+import * as fs from 'fs';
+import * as path from 'path';
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -33,6 +35,31 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     context.subscriptions.push(webview);
+
+    let openListener = vscode.workspace.onDidOpenTextDocument(document => {
+      if(document.languageId === 'json') {
+        parseJsonFile(document.fileName);
+      }
+    });
+
+    context.subscriptions.push(openListener);
+}
+
+function parseJsonFile(filePath: string) {
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      vscode.window.showErrorMessage("Error reading file : ", err.message);
+      return
+    }
+
+    try {
+      const jsonObject = JSON.parse(data);
+      vscode.window.showInformationMessage('JSON parsed succeefully: ', JSON.stringify(jsonObject, null, 2));
+    } catch {
+      vscode.window.showErrorMessage("Error parsing json");
+    }
+  });
 }
 
 export function deactivate() { }
+

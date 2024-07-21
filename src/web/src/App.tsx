@@ -4,38 +4,7 @@ import LinePlot from './lineplot';
 import "d3";
 import * as d3 from 'd3';
 
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.tsx</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 function App() {
-  // const data: Object = {
-  //   "field": "ddsajkf",
-  //   "field1": "ddsajkf",
-  //   "field2": "ddsajkf",
-  //   "field3": "ddsajkf",
-  // }
-
   const [data, setData] = useState(() => d3.ticks(-2, 2, 200).map(Math.sin));
 
   function onMouseMove(event: any) {
@@ -46,10 +15,12 @@ function App() {
   return (
     <div className="bg-gradient-to-r from-blue-600 to-purple-500 p-10" onMouseMove={onMouseMove}>
       <p className="text-white/80 text-xl font-semibold">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, explicabo
-        doloremque deserunt, voluptates, fugiat dolorem consectetur odio autem
-        quas ipsa veniam ducimus necessitatibus exercitationem numquam assumenda
-        natus beatae sed velit!
+      I have created an example service as a VSCode extension. 
+      This project is being conducted as an MVP (Minimum Viable Product). 
+      The basic setup involves creating a webview using React. 
+      Although I have completed the interface design, I was not able to fully learn the D3 library to render the desired graph. 
+      Therefore, I am concluding the work at this stage. 
+      I hope this can be helpful to someone.
       </p>      
       <LinePlot data={data}></LinePlot>
     </div>
